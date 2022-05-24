@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 class stack {
 	
-	static int st[],top=-1;
+	static int st[]=new int[20];
+	static int top=-1;
 	
 	static void push(){
 		
@@ -24,9 +25,9 @@ class stack {
 	}
 	
 	static void display(){
-		
-		for (int i=0;i<top;i++)
-		System.out.print("Stack : " + st[i]);
+		System.out.print("Stack : ");
+		for (int i=0;i<=top;i++)
+		System.out.print(st[i] + " ");
 	}
 		
 	
@@ -36,10 +37,9 @@ class stack {
 		Scanner io=new Scanner(System.in);
 		int n = io.nextInt();
 
-		stack o =new stack();
 		
 		for(int i=0;i<n;i++){
-			o.push();
+			push();
 		}
 		
 		boolean t=true;
@@ -52,15 +52,15 @@ class stack {
 		
 		switch(ch){
 		
-			case 1 : o.push();
-				 o.display();
+			case 1 : push();
+				 display();
 				 break;
 				 
-			case 2 : o.pop();
-				 o.display();
+			case 2 : pop();
+				 display();
 				 break;
 				 
-			case 3 : o.display();
+			case 3 : display();
 				 break;
 				 
 			case 4: System.exit(0);
